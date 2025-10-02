@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HorariosMIR - Galeria HorariosMIR</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+    .gallery-item { transition: all 0.3s ease; cursor: pointer; }
+    .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1),0 10px 10px -5px rgba(0,0,0,0.04); }
+  </style>
+</head>
+<body class="bg-gray-50">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm backdrop-filter backdrop-blur-lg bg-opacity-80">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold text-indigo-600">HorariosMIR</a>
+      <div class="hidden md:flex space-x-8">
+        <a href="#" class="text-gray-700 hover:text-indigo-600 font-medium">Inicio</a>
+        <a href="#gallery" class="text-gray-700 hover:text-indigo-600 font-medium">Galeria</a>
+        <a href="#about" class="text-gray-700 hover:text-indigo-600 font-medium">Acerca De</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden">
+    <div id="vanta-bg" class="absolute top-0 left-0 w-full h-full"></div>
+    <div class="relative z-10 text-center px-6">
+      <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">
+        Busca Tu Horario <span class="text-indigo-300">Rapido y Facil</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto">
+        Encuentra tu horario rapido , facil y con calidad.
+      </p>
+      <a href="#gallery" class="px-8 py-4 bg-indigo-600 text-white font-medium rounded-full hover:bg-indigo-700 transition">Ver horarios</a>
+    </div>
+    <div class="absolute bottom-10 w-full flex justify-center">
+      <a href="#gallery" class="animate-bounce">
+        <i data-feather="chevron-down" class="text-white w-10 h-10"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Galeria de Horarios</h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">Aqui pueden encontrar los horarios de 26 cursos distintos , encuentra el tuyo.</p>
+      </div>
+
+      <!-- Gallery Grid con 26 horarios -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+
+        <!-- Repite hasta 26 -->
+        <!-- Schedule 1 -->
+        <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-md" onclick="openModal(this)">
+          <img src="c:\Users\Ismael J\Desktop\Horarios Pendejos\Horarios\1A.jpg" alt="Primero 1A" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-800">Primero 1roA</h3>
+          </div>
+        </div>
+
+        <!-- Schedule 2 -->
+        <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-md" onclick="openModal(this)">
+          <img src="c:\Users\Ismael J\Desktop\Horarios Pendejos\Horarios\1b.jpg" alt="Schedule 2" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-800">Primero 1roB</h3>
+          </div>
+        </div>
+
+        <!-- Schedule 3 -->
+        <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-md" onclick="openModal(this)">
+          <img src="c:\Users\Ismael J\Desktop\Horarios Pendejos\Horarios\1C.jpg" alt="Schedule 3" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-800">Primero 1roC</h3>
+          </div>
+        </div>
+
+        <!-- Schedule 4 -->
+        <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-md" onclick="openModal(this)">
+          <img src="c:\Users\Ismael J\Desktop\Horarios Pendejos\Horarios\2A.jpg" alt="Schedule 4" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-800">Segundo 2doA</h3>
+          </div>
+        </div>
+
+        <!-- Schedule 5 -->
+        <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-md" onclick="openModal(this)">
+          <img src="c:\Users\Ismael J\Desktop\Horarios Pendejos\Horarios\2B.jpg" alt="Schedule 5" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-800">Segundo 2doB</h3>
+          </div>
+        </div>
+
+        <!-- Schedule 6 -->
+        <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-md" onclick="openModal(this)">
+          <img src="c:\Users\Ismael J\Desktop\Horarios Pendejos\Horarios\2C.jpg" alt="Schedule 6" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-800">Segundo 2doC</h3>
+          </div>
+        </div>
+
+        <!-- Schedule 7 -->
+        <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-md" onclick="openModal(this)">
+          <img src="c:\Users\Ismael J\Desktop\Horarios Pendejos\Horarios\3A.jpg" alt="Schedule 7" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-800">Tercero 3roA</h3>
+          </div>
+        </div>
+
+        <!-- Schedule 8 -->
+        <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-md" onclick="openModal(this)">
+          <img src="c:\Users\Ismael J\Desktop\Horarios Pendejos\Horarios\3B.jpg" alt="Schedule 8" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-800">Tercero 3roB</h3>
+          </div>
+        </div>
+
+        <!-- Schedule 9 -->
+        <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-md" onclick="openModal(this)">
+          <img src="c:\Users\Ismael J\Desktop\Horarios Pendejos\Horarios\3C.jpg" alt="Schedule 9" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-800">Tercero 3roC</h3>
+          </div>
+        </div>
+
+        <!-- Schedule 10 -->
+        <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-md" onclick="openModal(this)">
+          <img src="c:\Users\Ismael J\Desktop\Horarios Pendejos\Horarios\4C.jpg" alt="Schedule 10" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-800">Cuarto 4toC</h3>
+          </div>
+        </div>
+
+        <!-- Schedule 11 -->
+        <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-md" onclick="openModal(this)">
+          <img src="c:\Users\Ismael J\Desktop\Horarios Pendejos\Horarios\4D.jpg" alt="Schedule 11" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-800">Cuarto 4toD</h3>
+          </div>
+        </div>
+
+        <!-- Schedule 12 -->
+        <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-md" onclick="openModal(this)">
+          <img src="c:\Users\Ismael J\Desktop\Horarios Pendejos\Horarios\4toB.jpg" alt="Schedule 12" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-800">Cuarto 4toB</h3>
+          </div>
+        </div>
+
+        <!-- Schedule 13 -->
+        <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-md" onclick="openModal(this)">
+          <img src="c:\Users\Ismael J\Desktop\Horarios Pendejos\Horarios\4toE.jpg" alt="Schedule 13" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-800">Cuarto 4toE</h3>
+          </div>
+        </div>
+
+        <!-- Schedule 14 -->
+        <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-md" onclick="openModal(this)">
+          <img src="c:\Users\Ismael J\Desktop\Horarios Pendejos\Horarios\4toF.jpg" alt="Schedule 14" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-800">Cuarto 4toF</h3>
+          </div>
+        </div>
+
+        <!-- Schedule 15 -->
+        <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-md" onclick="openModal(this)">
+          <img src="c:\Users\Ismael J\Desktop\Horarios Pendejos\Horarios\4TOG.jpg" alt="Schedule 15" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-800">Cuarto 4toG</h3>
+          </div>
+        </div>
+
+        <!-- Schedule 16 -->
+        <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-md" onclick="openModal(this)">
+          <img src="c:\Users\Ismael J\Desktop\Horarios Pendejos\Horarios\5TO G.jpg" alt="Schedule 16" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-800">Quinto 5toG</h3>
+          </div>
+        </div>
+
+        <!-- Schedule 17 -->
+        <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-md" onclick="openModal(this)">
+          <img src="c:\Users\Ismael J\Desktop\Horarios Pendejos\Horarios\5TOA.jpg" alt="Schedule 17" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-800">Quinto 5toA</h3>
+          </div>
+        </div>
+
+        <!-- Schedule 18 -->
+        <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-md" onclick="openModal(this)">
+          <img src="c:\Users\Ismael J\Desktop\Horarios Pendejos\Horarios\5TOC.jpg" alt="Schedule 18" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-800">Quinto 5toC</h3>
+          </div>
+        </div>
+
+        <!-- Schedule 19 -->
+        <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-md" onclick="openModal(this)">
+          <img src="c:\Users\Ismael J\Desktop\Horarios Pendejos\Horarios\5TOD.jpg" alt="Schedule 19" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-800">Quinto 5toD</h3>
+          </div>
+        </div>
+
+        <!-- Schedule 20 -->
+        <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-md" onclick="openModal(this)">
+          <img src="c:\Users\Ismael J\Desktop\Horarios Pendejos\Horarios\5TOE.jpg" alt="Schedule 20" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-800">Quinto 5toE</h3>
+          </div>
+        </div>
+
+        <!-- Schedule 21 -->
+        <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-md" onclick="openModal(this)">
+          <img src="c:\Users\Ismael J\Desktop\Horarios Pendejos\Horarios\5TOF.jpg" alt="Schedule 21" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-800">Quinto 5toF</h3>
+          </div>
+        </div>
+
+        <!-- Schedule 22 -->
+        <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-md" onclick="openModal(this)">
+          <img src="c:\Users\Ismael J\Desktop\Horarios Pendejos\Horarios\6OD.jpg" alt="Schedule 22" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-800">Sexto 6toD</h3>
+          </div>
+        </div>
+
+        <!-- Schedule 23 -->
+        <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-md" onclick="openModal(this)">
+          <img src="c:\Users\Ismael J\Desktop\Horarios Pendejos\Horarios\6TOA.jpg" alt="Schedule 23" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-800">Sexto 6toA</h3>
+          </div>
+        </div>
+
+        <!-- Schedule 24 -->
+        <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-md" onclick="openModal(this)">
+          <img src="c:\Users\Ismael J\Desktop\Horarios Pendejos\Horarios\6TOC.jpg" alt="Schedule 24" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-800">Sexto 6toC</h3>
+          </div>
+        </div>
+
+        <!-- Schedule 25 -->
+        <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-md" onclick="openModal(this)">
+          <img src="c:\Users\Ismael J\Desktop\Horarios Pendejos\Horarios\6TOE.jpg" alt="Schedule 25" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-800">Sexto 6toE</h3>
+          </div>
+        </div>
+
+        <!-- Schedule 26 -->
+        <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-md" onclick="openModal(this)">
+          <img src="c:\Users\Ismael J\Desktop\Horarios Pendejos\Horarios\6TOF.jpg" alt="Schedule 26" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-800">Sexto 6toF</h3>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-90 hidden flex items-center justify-center z-50">
+    <button onclick="closeModal()" class="absolute top-6 right-6 text-white text-3xl">&times;</button>
+    <img id="modalImg" src="" alt="Expanded view" class="max-w-4xl max-h-[90vh] rounded-lg shadow-lg">
+  </div>
+
+  <!-- About -->
+  <section id="about" class="py-20 bg-white">
+    <div class="container mx-auto px-6 text-center max-w-2xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Acerca de HorariosMIR</h2>
+      <p class="text-lg text-gray-600 mb-6">
+        Este sitio web fue implementando con la finalidad de ayudar a estudiante y docentes desorientados o confundidos , principalmente para evitar confusiones de horarios de clase.
+      </p>
+      <p class="text-lg text-gray-600">
+En este sitio web se pueden apreciar 26 tipos de horarios de secundaria distintos , encontraste el tuyo ?
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-8">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+      <p class="text-gray-400">© 2025 HorariosMIR. Todos los derechos reservados.</p>
+      <p class="text-gray-400 mt-4 md:mt-0">Creador del sitio web: <span class="font-semibold">Jery Ismael Caba N.</span></p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      feather.replace();
+      VANTA.NET({
+        el: "#vanta-bg",
+        mouseControls: true,
+        touchControls: true,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        color: 0x6366f1,
+        backgroundColor: 0x111827,
+        points: 12.00,
+        maxDistance: 22.00,
+        spacing: 18.00
+      });
+    });
+
+    // Funciones Modal
+    function openModal(element) {
+      const imgSrc = element.querySelector("img").src;
+      document.getElementById("modalImg").src = imgSrc;
+      document.getElementById("imageModal").classList.remove("hidden");
+    }
+
+    function closeModal() {
+      document.getElementById("imageModal").classList.add("hidden");
+    }
+  </script>
+</body>
+</html>

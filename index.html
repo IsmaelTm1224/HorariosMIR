@@ -274,3 +274,50 @@ En este sitio web se pueden apreciar 26 tipos de horarios de secundaria distinto
       items.forEach(item => {
         const title = item.querySelector("h3").innerText.toLowerCase();
         item.style.display = title
+        <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    feather.replace();
+    VANTA.NET({
+      el: "#vanta-bg",
+      mouseControls: true,
+      touchControls: true,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: 0x6366f1,
+      backgroundColor: 0x111827,
+      points: 12.00,
+      maxDistance: 22.00,
+      spacing: 18.00
+    });
+  });
+
+  // Modal
+  function openModal(element) {
+    const imgSrc = element.querySelector("img").src;
+    document.getElementById("modalImg").src = imgSrc;
+    document.getElementById("imageModal").classList.remove("hidden");
+  }
+
+  function closeModal() {
+    document.getElementById("imageModal").classList.add("hidden");
+  }
+
+  // Búsqueda mejorada
+  function filterGallery() {
+    const input = document.getElementById("searchInput").value.toLowerCase().trim();
+    const items = document.querySelectorAll(".gallery-item");
+
+    items.forEach(item => {
+      const title = item.querySelector("h3").innerText.toLowerCase();
+      if (title.includes(input) || input === "") {
+        item.style.display = "block";
+      } else {
+        item.style.display = "none";
+      }
+    });
+  }
+</script>
+
+

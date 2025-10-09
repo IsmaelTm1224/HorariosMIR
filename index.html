@@ -13,7 +13,7 @@
     .gallery-item { transition: all 0.3s ease; cursor: pointer; }
     .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1),0 10px 10px -5px rgba(0,0,0,0.04); }
 
-    /* Fondo animado colorido */
+    
     @keyframes gradientMove {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
@@ -28,7 +28,7 @@
 </head>
 <body class="bg-gray-50">
 
-  <!-- Navigation -->
+
   <nav class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm backdrop-filter backdrop-blur-lg bg-opacity-80">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
       <a href="#" class="text-2xl font-bold text-indigo-600">HorariosMIR</a>
@@ -40,7 +40,7 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
+  
   <section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden">
     <div id="vanta-bg" class="absolute top-0 left-0 w-full h-full"></div>
     <div class="relative z-10 text-center px-6">
@@ -59,7 +59,7 @@
     </div>
   </section>
 
-  <!-- Gallery -->
+
   <section id="gallery" class="py-20 animated-bg">
     <div class="container mx-auto px-6">
       <div class="text-center mb-10">
@@ -67,15 +67,17 @@
         <p class="text-xl text-gray-200 max-w-2xl mx-auto">Aqui pueden encontrar los horarios de 26 cursos distintos , encuentra el tuyo.</p>
       </div>
 
-      <!-- Barra de búsqueda -->
+      
       <div class="flex justify-center mb-12">
-        <input id="searchInput" type="text" placeholder="Buscar curso..." class="w-full max-w-md px-5 py-3 rounded-full shadow-md focus:outline-none focus:ring-4 focus:ring-indigo-400" onkeyup="filterGallery()">
+        <input id="searchInput" type="text" placeholder="Buscar curso..." 
+               class="w-full max-w-md px-5 py-3 rounded-full shadow-md focus:outline-none focus:ring-4 focus:ring-indigo-400" 
+               onkeyup="filterGallery()">
       </div>
 
-      <!-- Gallery Grid con 26 horarios -->
+     
       <div id="galleryGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
 
-        <!-- Todos los 26 horarios originales -->
+        
         <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-md" onclick="openModal(this)">
           <img src="1A.jpg" alt="Primero 1A" class="w-full h-48 object-cover">
           <div class="p-4"><h3 class="text-lg font-semibold text-gray-800">Primero 1roA</h3></div>
@@ -210,13 +212,13 @@
     </div>
   </section>
 
-  <!-- Modal -->
+  
   <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-90 hidden flex items-center justify-center z-50">
     <button onclick="closeModal()" class="absolute top-6 right-6 text-white text-3xl">&times;</button>
     <img id="modalImg" src="" alt="Expanded view" class="max-w-4xl max-h-[90vh] rounded-lg shadow-lg">
   </div>
 
-  <!-- About -->
+  
   <section id="about" class="py-20 bg-white">
     <div class="container mx-auto px-6 text-center max-w-2xl">
       <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Acerca de HorariosMIR</h2>
@@ -224,12 +226,12 @@
         Este sitio web fue implementando con la finalidad de ayudar a estudiante y docentes desorientados o confundidos , principalmente para evitar confusiones de horarios de clase.
       </p>
       <p class="text-lg text-gray-600">
-En este sitio web se pueden apreciar 26 tipos de horarios de secundaria distintos , encontraste el tuyo ?
+        En este sitio web se pueden apreciar 26 tipos de horarios de secundaria distintos , ¿encontraste el tuyo?
       </p>
     </div>
   </section>
 
-  <!-- Footer -->
+ 
   <footer class="bg-gray-800 text-white py-8">
     <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
       <p class="text-gray-400">© 2025 HorariosMIR. Todos los derechos reservados.</p>
@@ -256,7 +258,7 @@ En este sitio web se pueden apreciar 26 tipos de horarios de secundaria distinto
       });
     });
 
-    // Funciones Modal
+ 
     function openModal(element) {
       const imgSrc = element.querySelector("img").src;
       document.getElementById("modalImg").src = imgSrc;
@@ -267,57 +269,21 @@ En este sitio web se pueden apreciar 26 tipos de horarios de secundaria distinto
       document.getElementById("imageModal").classList.add("hidden");
     }
 
-    // Barra de búsqueda
+    
     function filterGallery() {
-      const input = document.getElementById("searchInput").value.toLowerCase();
+      const input = document.getElementById("searchInput").value.toLowerCase().trim();
       const items = document.querySelectorAll(".gallery-item");
+
       items.forEach(item => {
         const title = item.querySelector("h3").innerText.toLowerCase();
-        item.style.display = title
-        <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    feather.replace();
-    VANTA.NET({
-      el: "#vanta-bg",
-      mouseControls: true,
-      touchControls: true,
-      minHeight: 200.00,
-      minWidth: 200.00,
-      scale: 1.00,
-      scaleMobile: 1.00,
-      color: 0x6366f1,
-      backgroundColor: 0x111827,
-      points: 12.00,
-      maxDistance: 22.00,
-      spacing: 18.00
-    });
-  });
-
-  // Modal
-  function openModal(element) {
-    const imgSrc = element.querySelector("img").src;
-    document.getElementById("modalImg").src = imgSrc;
-    document.getElementById("imageModal").classList.remove("hidden");
-  }
-
-  function closeModal() {
-    document.getElementById("imageModal").classList.add("hidden");
-  }
-
-  // Búsqueda mejorada
-  function filterGallery() {
-    const input = document.getElementById("searchInput").value.toLowerCase().trim();
-    const items = document.querySelectorAll(".gallery-item");
-
-    items.forEach(item => {
-      const title = item.querySelector("h3").innerText.toLowerCase();
-      if (title.includes(input) || input === "") {
-        item.style.display = "block";
-      } else {
-        item.style.display = "none";
-      }
-    });
-  }
-</script>
-
-
+        const alt = item.querySelector("img").alt.toLowerCase();
+        if (title.includes(input) || alt.includes(input) || input === "") {
+          item.style.display = "block";
+        } else {
+          item.style.display = "none";
+        }
+      });
+    }
+  </script>
+</body>
+</html>

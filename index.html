@@ -277,7 +277,12 @@
       items.forEach(item => {
         const title = item.querySelector("h3").innerText.toLowerCase();
         const alt = item.querySelector("img").alt.toLowerCase();
-        if (title.includes(input) || alt.includes(input) || input === "") {
+
+        // Extraer solo el número inicial del título
+        const match = title.match(/\d+/); 
+        const courseNumber = match ? match[0] : "";
+
+        if (title.includes(input) || alt.includes(input) || courseNumber === input || input === "") {
           item.style.display = "block";
         } else {
           item.style.display = "none";
